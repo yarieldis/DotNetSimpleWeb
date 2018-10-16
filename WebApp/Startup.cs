@@ -32,6 +32,7 @@ namespace WebApp
             });
 
             services.Configure<EmailConfig>(Configuration.GetSection("Email"));
+            services.AddTransient<IEmailService, EmailService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
