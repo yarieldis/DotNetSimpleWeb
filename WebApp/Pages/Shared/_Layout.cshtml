@@ -1,74 +1,122 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - WebApp</title>
-
-    <environment include="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
-    </environment>
-    <environment exclude="Development">
-        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
-              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-    </environment>
+    <meta charset="utf-8">
+    <title>@ViewData["Title"] - Olga Nicole Sal&oacute;n</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,700" rel="stylesheet" />
+    <link href="~/fonts/social.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/slider.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-page="/Index" class="navbar-brand">WebApp</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-page="/Index">Home</a></li>
-                    <li><a asp-page="/About">About</a></li>
-                    <li><a asp-page="/Contact">Contact</a></li>
+    <header id="header" class="gradient-bg">
+        <div class="clearfix d-flex">
+            <div class="col col-4 text-right phone-text-center flex-auto">
+                <a class="logo d-block mt-6 tablet-mt-1 pt-2 pl-2 phone-pr-2" href="#"><img src="~/img/logo.png" srcset="~/img/logo.png 1x, ~/img/logo-2x.png 2x, ~/img/logo-3x.png 3x" /></a>
+                <ul class="main-menu pt-2 pb-2" role="navigation">
+                    <li><a href="#about" class="text-bold text-uppercase text-color d-block p-08 pr-0 anchor">About Us</a></li>
+                    <li><a href="#services" class="text-bold text-uppercase text-color d-block p-08 pr-0 anchor">Services</a></li>
+                    <li><a href="#salon" class="text-bold text-uppercase text-color d-block p-08 pr-0 anchor">Salon</a></li>
+                    <li><a href="#team" class="text-bold text-uppercase text-color d-block p-08 pr-0 anchor">The team</a></li>
+                    <li><a href="#gallery" class="text-bold text-uppercase text-color d-block p-08 pr-0 anchor">Gallery</a></li>
+                    <li><a href="#testimonials" class="text-bold text-uppercase text-color d-block p-08 pr-0 anchor">Testimonials</a></li>
+                    <li><a href="#appointment" class="text-bold text-uppercase text-color d-block p-08 pr-0 anchor appointment-menu-link">Appointment</a></li>
+                    <li><a href="#contact" class="text-bold text-uppercase text-color d-block p-08 pr-0 anchor">Contact</a></li>
                 </ul>
             </div>
+            <div class="col col-1 flex-auto phone-d-none"></div>
+            <div class="col col-7 banner flex-auto phone-d-none"></div>
         </div>
-    </nav>
+        <div class="clearfix">
+            <div class="col col-4 tablet-col-12 text-right tablet-text-center">
+                <a class="rounded-button purple-blue-gradient d-inline-block text-color-white text-uppercase text-bold action-button mb-4 transition anchor" href="#appointment">Get an appointment</a>
+            </div>
+        </div>
+    </header>
 
-    <partial name="_CookieConsentPartial" />
+    @RenderBody()
 
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2018 - WebApp</p>
-        </footer>
-    </div>
+    <section id="contact">
+        <div class="clearfix d-flex tablet-portrait-d-block">
+            <div class="col col-6 tablet-portrait-col-12">
+                <div class="p-4 phone-p-2">
+                    <h1 class="contact-title text-color-lighter mb-2">
+                        <span class="text-light">Get in touch</span><br />
+                        <span class="text-medium">with us</span>
+                    </h1>
+                    <div class="contact-info-links">
+                        <a href="tel:+123456789" class="text-light contact-info-phone text-color-lighter"><i class="icon icon-phone"></i> +123456789</a>
+                        <a href="mailto:olganicolesalon@gmail.com" class="text-medium contact-info-mail text-color-lighter phone-text-09"><i class="icon icon-mail_outline"></i> olganicolesalon@gmail.com</a>
+                        <a href="url-al-mapa.html" class="text-regular contact-info-address text-color-lighter phone-text-09"><i class="icon icon-directions"></i> 604 W. Birchwood Rd. Tampa, FL 33604</a>
+                    </div>
+                    <form>
+                        <div class="clearfix contact-form mt-3">
+                            <div class="col col-6 phone-col-12">
+                                <label for="contactName">Name</label>
+                                <input name="contactName" id="contactName" value="" type="text" class="mr-1 phone-mr-0" />
+                            </div>
+                            <div class="col col-6 phone-col-12">
+                                <label for="contactEmail">Email</label>
+                                <input type="email" name="contactEmail" id="contactEmail" value="" />
+                            </div>
+                            <div class="col col-12">
+                                <label for="contactMessage">Message</label>
+                                <textarea name="contactMessage" id="contactMessage"></textarea>
+                            </div>
+                            <div class="col col-6 phone-col-12">
+                                captcha
+                            </div>
+                            <div class="col col-6 phone-col-12 text-right">
+                                <input type="submit" name="contactSubmit" value="Send" class="rounded-button text-regular text-color-white text-uppercase mt-1 transition" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col col-6 tablet-portrait-col-12 tablet-portrait-pt-0 tablet-portrait-height-50vh pt-4">
+                <iframe src="https://google.com" class="gmap-inframe shadow"></iframe>
+            </div>
+        </div>
+    </section>
 
-    <environment include="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-    </environment>
-    <environment exclude="Development">
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
-                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                asp-fallback-test="window.jQuery"
-                crossorigin="anonymous"
-                integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
-        </script>
-        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
-                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
-                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
-                crossorigin="anonymous"
-                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
-        </script>
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
-    </environment>
+    <footer id="footer" class="d-table full-width">
+        <div class="p-1 d-table-cell valign-middle text-right phone-d-table-row phone-text-center">
+            <img src="~/img/olga-nicole-salon-logo-white.svg" width="50" alt="Logo Olga Nicole Salon" align="middle" class="phone-mt-2 phone-mb-2" />
+        </div>
+        <div class="p-1 d-table-cell valign-middle phone-d-table-row phone-text-center">
+            <span class="text-color-white copyright-text phone-mt-2">
+                &copy; Olga Nicole Salon.<br />
+                All rights reserved. 2018
+            </span>
+        </div>
+        <div class="p-1 d-table-cell valign-middle text-bigger phone-d-table-row phone-text-center">
+            <a href="#" class="d-inline-block text-color-white phone-mt-2 phone-mb-2" title="Olga Nicole Salon on Facebook">
+                <span class="icon-facebook2"></span>
+            </a>
+            <a href="#" class="d-inline-block mr-1 ml-1 text-color-white phone-mt-2 phone-mb-2" title="Olga Nicole Salon on Youtube">
+                <span class="icon-youtube"></span>
+            </a>
+            <a href="#" class="d-inline-block text-color-white phone-mt-2 phone-mb-2" title="Olga Nicole Salon on Instagram">
+                <span class="icon-instagram"></span>
+            </a>
+        </div>
+    </footer>
 
+    <a class="gototop anchor transition" href="#header" title="Go to top">&uuarr;</a>
+    <ul class="side-menu pt-2 pb-2" role="navigation">
+        <li><a href="#about" class="text-bold text-uppercase text-color d-block p-08 pr-0 anchor">About Us</a></li>
+        <li><a href="#services" class="text-bold text-uppercase text-color d-block p-08 pr-0 anchor">Services</a></li>
+        <li><a href="#salon" class="text-bold text-uppercase text-color d-block p-08 pr-0 anchor">Salon</a></li>
+        <li><a href="#team" class="text-bold text-uppercase text-color d-block p-08 pr-0 anchor">The team</a></li>
+        <li><a href="#gallery" class="text-bold text-uppercase text-color d-block p-08 pr-0 anchor">Gallery</a></li>
+        <li><a href="#testimonials" class="text-bold text-uppercase text-color d-block p-08 pr-0 anchor">Testimonials</a></li>
+        <li><a href="#appointment" class="text-bold text-uppercase text-color d-block p-08 pr-0 anchor appointment-menu-link">Appointment</a></li>
+        <li><a href="#contact" class="text-bold text-uppercase text-color d-block p-08 pr-0 anchor">Contact</a></li>
+    </ul>
+
+    <script type="text/javascript" src="~/js/scrollto.js"></script>
+    <script type="text/javascript" src="~/js/common.js"></script>
+    <script type="text/javascript" src="~/js/slider.js"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>
