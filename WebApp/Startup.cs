@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using WebApp.Email;
+using WebApp.Razor;
 
 namespace WebApp
 {
@@ -33,6 +34,8 @@ namespace WebApp
 
             services.Configure<EmailConfig>(Configuration.GetSection("Email"));
             services.AddTransient<IEmailService, EmailService>();
+
+            services.AddScoped<IRazorRenderService, RazorRenderService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
