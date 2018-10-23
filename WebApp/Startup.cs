@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using WebApp.Email;
 using WebApp.Razor;
+using WebApp.Services;
 
 namespace WebApp
 {
@@ -36,6 +37,7 @@ namespace WebApp
             services.AddTransient<IEmailService, EmailService>();
 
             services.AddScoped<IRazorRenderService, RazorRenderService>();
+            services.AddScoped<IFileService, FileService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

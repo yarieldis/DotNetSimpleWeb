@@ -7,3 +7,7 @@
 <h3>@Model.Message</h3>
 
 <p>Use this area to provide additional information.</p>
+@foreach (var filename in Model.Files)
+{
+    <p>Filename: <a href="~/images/@filename">@filename</a></p>
+}
