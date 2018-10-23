@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
@@ -8,9 +9,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 using WebApp.Email;
 using WebApp.Razor;
-using WebApp.Services;
 
 namespace WebApp
 {
@@ -33,11 +34,15 @@ namespace WebApp
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.Add(
+                new ServiceDescriptor(typeof(IFileProvider),
+                new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot")))
+            );
+
             services.Configure<EmailConfig>(Configuration.GetSection("Email"));
             services.AddTransient<IEmailService, EmailService>();
 
             services.AddScoped<IRazorRenderService, RazorRenderService>();
-            services.AddScoped<IFileService, FileService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

@@ -3,24 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using WebApp.Services;
+using Microsoft.Extensions.FileProviders;
 
 namespace WebApp.Pages
 {
     public class AboutModel : PageModel
     {
-        private readonly IFileService _fileService;
-        public List<string> Files { get; set; }
+        private readonly IFileProvider _fileProvider;
+        public IDirectoryContents DirectoryContents { get; private set; }
         public string Message { get; set; }
 
-        public AboutModel(IFileService fileService)
+        public AboutModel(IFileProvider fileProvider)
         {
-            _fileService = fileService;
+            _fileProvider = fileProvider;
         }
         public void OnGet()
         {
             Message = "Your application description page.";
-            Files = _fileService.GetFileList("wwwroot/images");
+            DirectoryContents = _fileProvider.GetDirectoryContents("images");
         }
     }
 }
