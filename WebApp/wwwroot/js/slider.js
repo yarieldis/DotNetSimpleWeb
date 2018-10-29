@@ -13,7 +13,10 @@ function initSlider( slEl ) {
 					sliderControl.setAttribute( 'data-slide-index', cont );
 					cont++;
 				}
-			}
+            }
+            if ( sliderContInst.classList.contains( 'autoheight' ) ) {
+                autoheight( sliderContInst );
+            }
 		}
 	}
 }
@@ -56,7 +59,7 @@ if ( sliderControls != null ) {
 	}
 }
 
-function slideMove( slider, currSlideEl, direction ) {
+function slideMove(slider, currSlideEl, direction) {
 	currSlideEl.classList.remove( 'current' );
 	switch ( direction ) {
 		case 'next' :
@@ -70,7 +73,10 @@ function slideMove( slider, currSlideEl, direction ) {
 			backToFirst.classList.add( 'current' );
 			currSlideEl = 1; direction = null;
 			break;
-	}
+    }
+    if ( slider.classList.contains( 'autoheight' ) ) {
+        window.setTimeout( function ( slider ) { autoheight( slider ); }, 100, slider);
+    }
 	setCurrSlidePageIndex( slider, currSlideEl, direction );
 }
 
@@ -102,6 +108,16 @@ function setCurrSlidePageIndex( slider, sliderElem, direction = null ) {
 			}
 		}
 	}
+}
+
+function autoheight( sliderContInst ) {
+    let current = sliderContInst.querySelector( '.current' );
+    let finalHeight = 0;
+    for ( let j = 0; j < current.children.length; j++ ) {
+        let itemcurrent = current.children[ j ];
+        finalHeight += itemcurrent.scrollHeight;
+    }
+    sliderContInst.style.height = finalHeight + 'px';
 }
 
 initSlider( '.slider' );

@@ -1,8 +1,30 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Home";
 }
+
+<header id="header" class="gradient-bg">
+    <div class="clearfix d-flex">
+        <div class="col col-4 text-right phone-text-center flex-auto">
+            <a class="logo d-block mt-6 tablet-mt-1 pt-2 pl-2 phone-pr-2" href="#"><img src="~/img/logo.png" srcset="img/logo.png 1x, img/logo-2x.png 2x, img/logo-3x.png 3x" /></a>
+            <ul class="main-menu pt-2 pb-2" role="navigation">
+                <li><a href="#about" class="text-bold text-uppercase text-color d-block p-08 pr-0 anchor">About Us</a></li>
+                <li><a href="#services" class="text-bold text-uppercase text-color d-block p-08 pr-0 anchor">Services</a></li>
+                <li><a href="#salon" class="text-bold text-uppercase text-color d-block p-08 pr-0 anchor">Salon</a></li>
+                <li><a href="#team" class="text-bold text-uppercase text-color d-block p-08 pr-0 anchor">The team</a></li>
+                <li><a href="#gallery" class="text-bold text-uppercase text-color d-block p-08 pr-0 anchor">Gallery</a></li>
+                <li><a href="#testimonials" class="text-bold text-uppercase text-color d-block p-08 pr-0 anchor">Testimonials</a></li>
+                <li><a href="#appointment" class="text-bold text-uppercase text-color d-block p-08 pr-0 anchor appointment-menu-link">Appointment</a></li>
+                <li><a href="#contact" class="text-bold text-uppercase text-color d-block p-08 pr-0 anchor">Contact</a></li>
+            </ul>
+            <a class="rounded-button purple-blue-gradient d-inline-block text-color-white text-uppercase text-bold action-button mb-4 transition anchor" href="#appointment">Get an appointment</a>
+        </div>
+        <div class="col col-1 flex-auto phone-d-none"></div>
+        <div class="col col-7 banner flex-auto phone-d-none"></div>
+    </div>
+</header>
+
 <section id="about" class="parallax about">
     <div class="clearfix relative">
         <div class="col col-6 tablet-col-8 phone-col-12">
@@ -40,16 +62,22 @@
     <div class="clearfix d-flex full-height phone-d-block">
         <div class="col col-1 flex-auto"></div>
         <div class="col col-2 tablet-col-3 phone-col-10 flex-auto">
-            <h1 class="section-title text-color text-right mt-6 tablet-text-1-8 phone-text-left phone-mt-2">
-                <span class="text-thin">Explore</span><br />
-                <span class="text-medium">Services</span>
-            </h1>
-            <a href="#" class="service-tile tile-a shadow white-bg transition d-block ml-auto mt-2 phone-maxw-100">
-                <h3 class="service-tile-title text-bold text-color tablet-text-09 phone-pos-rel">Colour Services</h3>
-            </a>
-            <a href="#" class="service-tile tile-a shadow white-bg transition d-block ml-auto mt-2 phone-maxw-100">
-                <h3 class="service-tile-title text-bold text-color tablet-text-09 phone-pos-rel">Express Services</h3>
-            </a>
+            <div class="full-height d-flex flex-column full-height">
+                <div class="flex-auto">
+                    <h1 class="section-title text-color text-right mt-6 tablet-text-1-8 phone-text-left phone-mt-2">
+                        <span class="text-thin">Explore</span><br />
+                        <span class="text-medium">Services</span>
+                    </h1>
+                </div>
+                <div class="flex-auto tiles-container">
+                    <a href="#" class="service-tile tile-a shadow white-bg transition d-block ml-auto mt-2 phone-maxw-100">
+                        <h3 class="service-tile-title text-bold text-color tablet-text-09 phone-pos-rel">Colour Services</h3>
+                    </a>
+                    <a href="#" class="service-tile tile-a shadow white-bg transition d-block ml-auto mt-2 phone-maxw-100">
+                        <h3 class="service-tile-title text-bold text-color tablet-text-09 phone-pos-rel">Express Services</h3>
+                    </a>
+                </div>
+            </div>
         </div>
         <div class="col col-2 tablet-col-4 phone-col-6 flex-auto phone-mt-2">
             <a href="#" class="service-tile tile-b shadow white-bg transition d-flex flex-column ml-auto full-height mr-1">
@@ -184,24 +212,24 @@
         </div>
         <div class="col col-4 phone-col-12 full-height phone-height-30percent relative">
             <div class="d-table full-height full-width">
-                <a href="gallery.html" class="view-gallery--link text-regular">View <br /> Gallery <span class="arrow">&rarr;</span></a>
+                <a href="gallery" class="view-gallery--link text-regular">View <br /> Gallery <span class="arrow">&rarr;</span></a>
             </div>
         </div>
     </div>
 </section>
 
 <section id="testimonials">
-    <div class="clearfix relative testimonials-container">
+    <div class="clearfix relative testimonials-container d-flex">
         <div class="col col-2 tablet-d-none"></div>
-        <div class="col col-1 full-height relative text-center">
+        <div class="col col-1 relative text-center">
             <div class="control-top-spacer"></div>
             <label class="slider-control slider-control-prev testimonial-control" data-slider="#testimonials-slider"></label>
         </div>
-        <div class="col col-6 tablet-col-10 full-height relative d-flex flex-column pt-2">
+        <div class="col col-6 tablet-col-10 relative d-flex flex-column pt-2">
 
             <h1 class="text-bold text-color-lighter mt-2 testimonials-header-title mb-1 text-center">Testimonials</h1>
             <h5 class="text-bold text-color-lighter mb-2 testimonials-header-subtitle text-center">What customers said about us</h5>
-            <div id="testimonials-slider" class="slider text-center">
+            <div id="testimonials-slider" class="slider autoheight text-center">
                 <div class="slider-item current">
                     <h4 class="text-bold">Betty Molten</h4>
                     <div class="testimonial-body text-color text-regular p-2">
@@ -235,7 +263,7 @@
                 <a class="rounded-button purple-orange-gradient d-inline-block text-color-white text-uppercase text-bold action-button transition shadow anchor" href="#services">Write yours</a>
             </div>
         </div>
-        <div class="col col-1 full-height relative text-center">
+        <div class="col col-1 relative text-center">
             <div class="control-top-spacer"></div>
             <label class="slider-control slider-control-next testimonial-control" data-slider="#testimonials-slider"></label>
         </div>
@@ -246,7 +274,7 @@
 <section id="appointment">
     <div class="clearfix d-flex tablet-portrait-d-block mt-2">
         <div class="col col-3 tablet-portrait-col-12 tablet-portrait-height-10rem flex-auto appointment-bg"></div>
-        <div class="col col-4 tablet-portrait-col-12 flex-auto times-bg">
+        <div class="col col-4 tablet-portrait-col-12 flex-auto light-bg">
             <div class="p-2">
                 <h1 class="appointment-title text-color-lighter mb-2">
                     <span class="text-light">Opening</span><br />

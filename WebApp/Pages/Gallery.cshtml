@@ -1,0 +1,159 @@
+﻿@page
+@model GalleryModel
+@{
+    ViewData["Title"] = "Gallery";
+}
+
+<header id="header" class="gallery-page">
+    <div class="clearfix d-flex phone-d-block">
+        <div class="col col-1 phone-col-12"></div>
+        <div class="col col-2 phone-col-12 text-center">
+            <a class="logo d-block tablet-mt-1 pt-2 mb-4 phone-pr-2 phone-pl-2" href="#">
+                <img src="img/logo.png" srcset="img/logo.png 1x, img/logo-2x.png 2x, img/logo-3x.png 3x" />
+            </a>
+        </div>
+        <div class="col col-8 phone-col-12">
+            <div class="d-table full-width full-height">
+                <div class="d-table-cell valign-middle text-right phone-text-center">
+                    <ul class="main-menu pt-2 pb-2 mr-1 d-inline-block" role="navigation">
+                        <li><a href="/" class="text-bold text-uppercase text-color d-block p-08 pr-0">Home</a></li>
+                        <li><a href="#gallery" class="text-bold text-uppercase text-color d-block p-08 pr-0 anchor">Gallery</a></li>
+                        <li><a href="#contact" class="text-bold text-uppercase text-color d-block p-08 pr-0 anchor">Contact</a></li>
+                    </ul>
+                    <a class="rounded-button purple-blue-gradient d-inline-block text-color-white text-uppercase text-bold action-button ml-1 transition anchor phone-mb-2" href="#appointment">Get an appointment</a>
+                </div>
+            </div>
+        </div>
+        <div class="col col-1 phone-col-12"></div>
+    </div>
+</header>
+
+<section id="gallery">
+    <div class="clearfix">
+        <div class="col col-1"></div>
+        <div class="col col-10">
+            <h1 class="section-title">Gallery</h1>
+            <div class="light-bg p-2 mt-2 text">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="pt-2 pb-2 text column-2">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <div class="clearfix gallery--container grid">
+                <div class="grid-sizer"></div>
+                <div class="grid-item"><img src="img/gallery/Hairdressers-Edinburgh-VincentBell-Gallery4.jpg" /></div>
+                <div class="grid-item"><img src="img/gallery/Hairdressers-Edinburgh-VincentBell-Main1.jpg" /></div>
+                <div class="grid-item"><img src="img/gallery/Hairdressers-Edinburgh-VincentBell-Main5.jpg" /></div>
+                <div class="grid-item"><img src="img/gallery/Hairdressers-Edinburgh-VincentBell-Main6.jpg" /></div>
+                <div class="grid-item"><img src="img/gallery/Hairdressers-Edinburgh-VincentBell-Main11.jpg" /></div>
+                <div class="grid-item"><img src="img/gallery/Hairdressers-Edinburgh-VincentBell-Main12.jpg" /></div>
+                <div class="grid-item"><img src="img/gallery/Hairdressers-Edinburgh-VincentBell-Main13.jpg" /></div>
+                <div class="grid-item"><img src="img/gallery/Hairdressers-Edinburgh-VincentBell-Main14.jpg" /></div>
+                <div class="grid-item"><img src="img/gallery/Hairdressing-at-Barnsdale.jpg" /></div>
+                <div class="grid-item"><img src="img/gallery/hairdressing-courses-edinburgh-cover1.jpg" /></div>
+            </div>
+        </div>
+        <div class="col col-1"></div>
+    </div>
+</section>
+
+<section id="appointment">
+    <div class="clearfix d-flex tablet-portrait-d-block mt-2">
+        <div class="col col-3 tablet-portrait-col-12 tablet-portrait-height-10rem flex-auto appointment-bg"></div>
+        <div class="col col-4 tablet-portrait-col-12 flex-auto light-bg">
+            <div class="p-2">
+                <h1 class="appointment-title text-color-lighter mb-2">
+                    <span class="text-light">Opening</span><br />
+                    <span class="text-medium">times</span>
+                </h1>
+                <div class="appointment-times text-color-lighter">
+                    <span class="time-label text-uppercase text-bold">Sunday</span>
+                    <span class="time">10:00 - 17:00</span>
+                    <span class="time-label text-uppercase text-bold">Monday - Wednesday</span>
+                    <span class="time">09:00 - 18:00</span>
+                    <span class="time-label text-uppercase text-bold">Thursday</span>
+                    <span class="time">09:00 - 20:00</span>
+                    <span class="time-label text-uppercase text-bold">Friday</span>
+                    <span class="time">09:00 - 18:00</span>
+                    <span class="time-label text-uppercase text-bold">Saturday</span>
+                    <span class="time">09:00 - 17:00</span>
+                </div>
+            </div>
+        </div>
+        <div class="col col-5 tablet-portrait-col-12 flex-auto">
+            <div class="p-2">
+                <h1 class="appointment-title text-color-lighter mb-2">
+                    <span class="text-light">Ready for an</span><br />
+                    <span class="text-medium">appointment?</span>
+                </h1>
+                <div class="appointment-form">
+                    <form>
+                        <div class="clearfix">
+                            <div class="col col-6 tablet-col-12">
+                                <label for="date">Date and time</label>
+                                <div class="clearfix">
+                                    <div class="col col-7">
+                                        <input name="appoDate" value="" type="date" class="mr-1" />
+                                    </div>
+                                    <div class="col col-5">
+                                        <input name="appoTime" value="10:00" type="time" class="mr-1 tablet-mr-0" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-6 tablet-col-12">
+                                <label for="date">Hairdresser</label>
+                                <select name="appoHairdresser">
+                                    <option>Nicole</option>
+                                    <option>Yanina</option>
+                                    <option>Amanda</option>
+                                </select>
+                            </div>
+                            <div class="col col-12 mt-1">
+                                <label for="date">Name</label>
+                                <input name="appoName" value="" type="text" />
+                            </div>
+                            <div class="col col-6">
+                                <label for="date">Phone</label>
+                                <input type="text" name="appoPhone" value="" class="mr-1" />
+                            </div>
+                            <div class="col col-6">
+                                <label for="date">Email</label>
+                                <input type="email" name="appoEmail" value="" />
+                            </div>
+                            <div class="col col-6 mt-1">
+                                <label for="date">Desired service</label>
+                                <select name="appoHairdresser" class="mr-1">
+                                    <option>Perming</option>
+                                    <option>Treatment</option>
+                                    <option>Other Services</option>
+                                </select>
+                            </div>
+                            <div class="col col-6 mt-1">
+                                captcha
+                            </div>
+                            <div class="col col-12">
+                                <input type="submit" name="appoSubmit" value="Send" class="rounded-button text-regular text-color-white text-uppercase mt-1 transition" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="js/masonry.pkgd.min.js"></script>
+<script src="js/imagesloaded.pkgd.min.js"></script>
+<script type="text/javascript">
+    var grid = document.querySelector( '.grid' );
+    var msnry;
+    imagesLoaded( grid, function() {
+            msnry = new Masonry( grid, {
+            itemSelector: '.grid-item',
+            columnWidth: '.grid-sizer',
+            percentPosition: true,
+            gutter: 24
+        });
+    });
+</script>
