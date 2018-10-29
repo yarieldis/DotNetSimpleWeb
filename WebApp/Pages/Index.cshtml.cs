@@ -15,19 +15,28 @@ namespace WebApp.Pages
         private readonly IEmailService _emailService;
         private readonly IRazorRenderService _renderService;
 
+        public string Section { get; set; } = "#header";
+
+        [BindProperty]
+        public ContactModel ContactModel { get; set; }
+
         public IndexModel(IEmailService emailService, IRazorRenderService renderService)
         {
             _emailService = emailService;
             _renderService = renderService;
         }
-        public async Task OnGet()
+        public async Task<IActionResult> OnPostAsync()
         {
-            var body = await _renderService.RenderToStringAsync("HelloView", new UserModel
+            if (!ModelState.IsValid)
             {
-                Id = 1,
-                Name = "Hello"
-            });
+                Section = "#contact";
+                return Page();
+            }
+
+            var body = await _renderService.RenderToStringAsync("ContactView", ContactModel);
             await _emailService.SendEmailAsync("", "", body);
+
+            return RedirectToPage("Index");
         }
     }
 }

@@ -369,19 +369,22 @@
                     <a href="mailto:olganicolesalon@gmail.com" class="text-medium contact-info-mail text-color-lighter phone-text-09"><i class="icon icon-mail_outline"></i> olganicolesalon@gmail.com</a>
                     <a href="url-al-mapa.html" class="text-regular contact-info-address text-color-lighter phone-text-09"><i class="icon icon-directions"></i> 604 W. Birchwood Rd. Tampa, FL 33604</a>
                 </div>
-                <form>
+                <form method="post">
                     <div class="clearfix contact-form mt-3">
                         <div class="col col-6 phone-col-12">
-                            <label for="contactName">Name</label>
-                            <input name="contactName" id="contactName" value="" type="text" class="mr-1 phone-mr-0" />
+                            <label asp-for="ContactModel.Name">Name</label>
+                            <input asp-for="ContactModel.Name" id="contactName" value="" type="text" class="mr-1 phone-mr-0" />
+                            <span asp-validation-for="ContactModel.Name"></span>
                         </div>
                         <div class="col col-6 phone-col-12">
-                            <label for="contactEmail">Email</label>
-                            <input type="email" name="contactEmail" id="contactEmail" value="" />
+                            <label asp-for="ContactModel.Email">Email</label>
+                            <input type="email" asp-for="ContactModel.Email" id="contactEmail" value="" />
+                            <span asp-validation-for="ContactModel.Email"></span>
                         </div>
                         <div class="col col-12">
-                            <label for="contactMessage">Message</label>
-                            <textarea name="contactMessage" id="contactMessage"></textarea>
+                            <label asp-for="ContactModel.Message">Message</label>
+                            <textarea asp-for="ContactModel.Message" id="contactMessage"></textarea>
+                            <span asp-validation-for="ContactModel.Message"></span>
                         </div>
                         <div class="col col-6 phone-col-12">
                             captcha
@@ -398,3 +401,9 @@
         </div>
     </div>
 </section>
+@section Scripts{
+    <script type="text/javascript">
+        let section = '@Model.Section';
+        scrollToY(null, null, null, section, null);
+    </script>
+}

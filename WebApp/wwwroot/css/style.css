@@ -348,6 +348,13 @@ body {
     background-color: #f2f6f5;
 }
 
+.field-validation-error {
+    color: #cc1f1f;
+    font-size: 90%;
+    margin: -10px 0 16px;
+    display: block;
+}
+
 /*
 ** Text
 */
